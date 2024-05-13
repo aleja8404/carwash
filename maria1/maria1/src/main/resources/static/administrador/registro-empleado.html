@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Empleado - Lavautos San Felipe</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS general -->
+<style> 
+/* Ejemplo de estilo para el formulario */
+.custom-form {
+    margin-top: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Ejemplo de estilo para el footer */
+.footer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.navigation-buttons a {
+    margin: 0 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.navigation-buttons a:hover {
+    text-decoration: underline;
+}
+
+
+ </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-text="Registro de Empleado">Registro de Empleado</h1> <!-- Título con efecto de deslizamiento lateral -->
+        <!-- Formulario para registrar un empleado -->
+        <form action="/registrar-empleado" method="POST" class="custom-form">
+            <!-- Campos del formulario -->
+            <div class="form-field">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-field">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+
+            <div class="form-field">
+                <label for="identificacion">Identificación:</label>
+                <input type="text" id="identificacion" name="identificacion" required>
+            </div>
+
+            <div class="form-field">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+
+            <div class="form-field">
+                <label for="telefono-emergencias">Teléfono de Emergencias:</label>
+                <input type="tel" id="telefono-emergencias" name="telefono-emergencias" required>
+            </div>
+
+            <button type="submit">Registrar Empleado</button>
+        </form>
+    </div>
+
+    <!-- Footer con botones de navegación -->
+    <footer class="footer">
+        <div class="navigation-buttons">
+            <a href="/registro-cliente">Registro de Clientes</a>
+            <a href="/registro-lavados">Registro de Lavados</a>
+            <a href="/buscar-auto">Buscar Vehículo</a>
+            <a href="/registro-vehiculos">Registro de Vehículos</a> <!-- Corregido el enlace -->
+            <a href="/cerrar-sesion">Cerrar Sesión</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente - Lavautos San Felipe</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS general -->
+
+
+<style> 
+
+/* Ejemplo de estilo para el formulario */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Para que los campos de entrada ocupen el 100% del contenedor */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* Ejemplo de estilo para el footer */
+.footer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.navigation-buttons a {
+    margin: 0 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.navigation-buttons a:hover {
+    text-decoration: underline;
+}
+
+
+ </style>
+</head>
+<body>
+    <div class="container">
+        <h1 data-text="Registro de Cliente">Registro de Cliente</h1> <!-- Título con efecto de deslizamiento lateral -->
+        <!-- Formulario para registrar un cliente -->
+        <form action="/registrar-cliente" method="POST">
+            <!-- Campos del formulario -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <button type="submit">Registrar Cliente</button>
+        </form>
+    </div>
+
+    <!-- Footer con botones de navegación -->
+    <footer class="footer">
+        <div class="navigation-buttons">
+            <a href="/registro-auto">Registro de Vehículos</a>
+            <a href="/registro-lavados">Registro de Lavados</a>
+            <a href="/buscar-vehiculo">Buscar Vehículo</a>
+            <a href="/registro-empleado">Registro de Empleado</a>
+            <a href="/cerrar-sesion">Cerrar Sesión</a>
+        </div>
+    </footer>
+</body>
+</html>

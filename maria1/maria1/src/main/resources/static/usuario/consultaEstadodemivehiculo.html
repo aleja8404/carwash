@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS general -->
+    <title>Consulta Estado de Mi Vehículo - Lavautos San Felipe</title>
+
+    <!-- Estilos CSS en línea -->
+    <style>
+        /* Estilo para la tabla */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: sans-serif;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+        }
+
+        /* Estilo para los encabezados de la tabla */
+        .styled-table thead tr {
+            background-color: #009879;
+            color: white;
+            text-align: left;
+        }
+
+        /* Estilo para las celdas de la tabla */
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        /* Estilo para las filas alternas */
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        /* Estilo para las filas al pasar el mouse */
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo para la lista de navegación */
+        .navigation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navigation-list li {
+            margin: 10px 0;
+        }
+
+        .navigation-list li a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation-list li a:hover {
+            background-color: #009879;
+            color: white;
+        }
+
+        /* Estilo para el pie de página */
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #009879;
+            color: white;
+            text-align: center;
+        }
+
+        .footer .navigation-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer .navigation-buttons a:hover {
+            background-color: #007966;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 data-text="Consulta Estado de Mi Vehículo">Consulta Estado de Mi Vehículo</h1> <!-- Título con efecto de deslizamiento lateral -->
+        
+        <!-- Formulario para consultar el estado de un vehículo -->
+        <form action="/consulta-estado-vehiculo" method="GET" class="custom-form">
+            <label for="placa">Placa del Vehículo:</label>
+            <input type="text" id="placa" name="placa" required>
+            <button type="submit">Consultar</button>
+        </form>
+
+        <!-- Tabla para mostrar los resultados de la consulta -->
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Servicio</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de datos; estos datos deben ser reemplazados con datos reales del servidor -->
+                <tr>
+                    <td>01/05/2024</td>
+                    <td>Lavado General</td>
+                    <td>Completado</td>
+                </tr>
+                <tr>
+                    <td>15/05/2024</td>
+                    <td>Encerado</td>
+                    <td>Pendiente</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- Footer con botones de navegación -->
+    <footer class="footer">
+        <div class="navigation-buttons">
+            <a href="/registro-cliente">volver</a>
+    
+        </div>
+    </footer>
+</body>
+
+</html>

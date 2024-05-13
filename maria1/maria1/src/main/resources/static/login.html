@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - Lavautos San Felipe</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS general -->
+    <link rel="stylesheet" href="../css/login.css"> <!-- Enlace al archivo CSS específico para la vista de login -->
+</head>
+<body>
+    <div class="container">
+        <h1 data-text="Iniciar Sesión">Iniciar Sesión</h1> <!-- Título con efecto de deslizamiento lateral -->
+        <!-- Formulario de inicio de sesión -->
+        <form action="/login" method="POST">
+            <!-- Campos del formulario -->
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

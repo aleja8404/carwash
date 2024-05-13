@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Lavados o Servicios</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS externo -->
+
+<style> /* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Estilos para la estructura de la página */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+    text-shadow: 1px 1px #fff;
+}
+
+/* Campos del formulario */
+.form-field {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button[type="button"] {
+    margin-left: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.navigation-buttons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation-buttons a:hover {
+    text-decoration: underline;
+}
+ </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 data-text="Lavautos San Felipe">Lavautos San Felipe</h1> <!-- Título con efecto de deslizamiento lateral -->
+        
+        <!-- Formulario para registrar lavados o servicios -->
+        <form action="/registrar-lavado" method="POST" class="custom-form">
+            
+            <!-- Campos del formulario -->
+            <div class="form-field">
+                <label for="nombre">Nombre del Cliente:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-field">
+                <label for="vehiculo">Vehículo:</label>
+                <input type="text" id="vehiculo" name="vehiculo" required>
+            </div>
+
+            <!-- Lista dinámica de servicios -->
+            <div id="servicios">
+                <div class="servicio">
+                    <label for="tipo">Tipo de Servicio:</label>
+                    <select name="tipo[]" required>
+                        <option value="lavado">Lavado Sencillo</option>
+                        <option value="encerado">Lavado General</option>
+                        <option value="detallado">Lavado de Motor</option>
+                        <option value="encerado">Encerada</option>
+                        <option value="polichada">Polichada</option>
+                    </select>
+
+ <p>
+</p>
+                    <button type="button" onclick="eliminarServicio(this)">Eliminar</button>
+ <p>
+</p>
+                </div>
+            </div>
+            
+            <button type="button" onclick="agregarServicio()">Agregar Servicio</button>
+ <p>
+</p>
+           <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Footer con botones de navegación -->
+    <footer class="footer">
+        <div class="navigation-buttons">
+            <a href="/registro-cliente">Registro de Clientes</a>
+            <a href="/registro-auto">Registro de Vehículos</a>
+            <a href="/buscar-auto">Buscar Vehículo</a>
+            <a href="/registro-empleado">Registro de Empleado</a>
+            <a href="/cerrar-sesion">Cerrar Sesión</a>
+        </div>
+    </footer>
+
+    <script>
+        // Función para agregar un nuevo campo de selección de tipo de servicio
+        function agregarServicio() {
+            const serviciosDiv = document.getElementById('servicios');
+            const nuevoServicio = document.createElement('div');
+            nuevoServicio.classList.add('servicio');
+            nuevoServicio.innerHTML = `
+                <label for="tipo">Tipo de Servicio:</label>
+                <select name="tipo[]" required>
+                    <option value="lavado">Lavado Sencillo</option>
+                    <option value="encerado">Lavado General</option>
+                    <option value="detallado">Lavado de Motor</option>
+                    <option value="encerado">Encerada</option>
+                    <option value="polichada">Polichada</option>
+                </select>
+                <button type="button" onclick="eliminarServicio(this)">Eliminar</button>
+            `;
+            serviciosDiv.appendChild(nuevoServicio);
+        }
+
+        // Función para eliminar un campo de selección de tipo de servicio
+        function eliminarServicio(btn) {
+            btn.parentNode.remove();
+        }
+    </script>
+</body>
+
+</html>

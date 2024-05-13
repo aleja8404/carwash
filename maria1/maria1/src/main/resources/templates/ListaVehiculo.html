@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Enlace al archivo CSS general -->
+    <title>Lista Estilizada</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Estilos CSS en línea -->
+    <style>
+        /* Estilo para la tabla */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1em;
+            font-family: sans-serif;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+        }
+
+        /* Estilo para los encabezados de la tabla */
+        .styled-table thead tr {
+            background-color: #009879;
+            color: white;
+            text-align: left;
+        }
+
+        /* Estilo para las celdas de la tabla */
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        /* Estilo para las filas alternas */
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        /* Estilo para las filas al pasar el mouse */
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo para la lista de navegación */
+        .navigation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .navigation-list li {
+            margin: 10px 0;
+        }
+
+        .navigation-list li a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            display: block;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation-list li a:hover {
+            background-color: #009879;
+            color: white;
+        }
+
+        /* Estilo para el pie de página */
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #009879;
+            color: white;
+            text-align: center;
+        }
+
+        .footer .navigation-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            margin: 0 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer .navigation-buttons a:hover {
+            background-color: #007966;
+        }
+    </style>
+</head>
+
+<body>
+
+
+  <h1>Buscar Vehículo</h1>
+        <form action="/buscar-vehiculo" method="GET">
+            <label for="placa">Placa del Vehículo:</label>
+            <input type="text" id="placa" name="placa" required>
+            <button type="submit">Buscar</button>
+        </form>
+    <div class="container">
+        <h1>Lista de Navegación</h1>
+
+        <div class="container mt-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <a th:href="@{/auto/crear}" class="btn btn-primary">Agregar Auto</a>
+            </div>
+            <table id="example" class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Responsable</th>
+                    <th>Placa</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody id="asignaturasBody">
+                <tr th:each="auto : ${autos}">
+                    <td th:text="${auto.id}"></td>
+                    <td th:text="${auto.marca}"></td>
+                    <td th:text="${auto.responsable}"></td>
+                    <td th:text="${auto.placa}"></td>
+                    <td>
+                        <div class="btn-group">
+                            <a th:href="@{/auto/eliminar/{id}(id=${auto.id})}" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+     
+    <!-- Footer con botones de navegación -->
+    <footer class="footer">
+        <div class="navigation-buttons">
+            <a href="/registro-cliente">Registro de Clientes</a>
+            <a href="/registro-auto">Registro de Vehículos</a>
+            <a href="/registro-lavados">Registro de Lavados</a>
+            <a href="/registro-empleado">Registro de Empleado</a>
+            <a href="/buscar-vehiculo">Buscar Vehículo</a>
+            <a href="/cerrar-sesion">Cerrar Sesión</a>
+        </div>
+    </footer>
+</body>
+
+</html>
